@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './admin-portal/dashboard/dashboard.component';
@@ -8,6 +9,7 @@ import { LogInComponent } from './admin-portal/log-in/log-in.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
      DashboardComponent,
      AccountComponent,
      LogInComponent],
@@ -16,6 +18,8 @@ import { LogInComponent } from './admin-portal/log-in/log-in.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  ngDoBootstrap() {  }
+ }
